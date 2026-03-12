@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    /* TweakCN Inspired Sage: Slightly deeper and more vibrant */
+    --primary: 167 45% 35%;
+    --primary-foreground: 167 45% 98%;
+
+    --secondary: 167 20% 95%;
+    --secondary-foreground: 167 50% 15%;
+
+    --muted: 167 15% 96%;
+    --muted-foreground: 167 15% 45%;
+
+    --accent: 167 35% 94%;
+    --accent-foreground: 167 50% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 167 20% 88%;
+    --input: 167 20% 88%;
+    --ring: 167 45% 35%;
+
+    --radius: 0.85rem;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 40% 98%;
+
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 167 40% 45%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 167 30% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 167 30% 12%;
+    --muted-foreground: 167 20% 65%;
+
+    --accent: 167 30% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 167 30% 15%;
+    --input: 167 30% 15%;
+    --ring: 167 40% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Glassmorphism Class */
+.glass {
+  @apply bg-background/60 backdrop-blur-lg border border-border/50;
+}
+
+/* Subtle Shadow Bloom */
+.shadow-bloom {
+  box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.15);
+}
+
+/* Scrollbar styling - Ultra-minimal */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 rounded-full hover:bg-primary/40 transition-all;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-black tracking-tighter text-foreground leading-none;
+}
+
+/* Plan Card Refinement */
+.card-plan {
+  @apply relative flex flex-col p-8 rounded-2xl border border-border bg-card shadow-sm transition-all hover:shadow-xl hover:shadow-primary/5 hover:border-primary/40;
+}
