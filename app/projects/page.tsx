@@ -47,34 +47,9 @@ export default function ProjectsPage() {
             Specialized solutions for enterprise challenges.
           </p>
 
-          <div className="max-w-xl mx-auto">
-            <div className="relative group">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
-              <Input
-                placeholder="Search tech stack..."
-                className="pl-12 h-12 rounded-xl bg-muted/40 border-border focus:border-primary/50 transition-all font-bold text-sm"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-          </div>
         </motion.div>
 
         {/* Category Filter - Slimmer */}
-        <div className="flex flex-wrap items-center justify-center gap-1 mb-12 border-b border-border">
-          {categories.map((c) => (
-            <button
-              key={c}
-              className={`px-6 py-3 text-[10px] font-black uppercase tracking-widest transition-all border-b-4 ${activeCategory === c
-                ? 'border-primary text-primary bg-primary/5'
-                : 'border-transparent text-muted-foreground hover:text-foreground'
-                }`}
-              onClick={() => setActiveCategory(c)}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
 
         {/* Project Grid - With Loader Overlay */}
         <div className="relative min-h-[400px]">

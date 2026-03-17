@@ -1,7 +1,8 @@
-'use client';
-import { portfolioData } from '@/lib/data';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+"use client";
+
+import { portfolioData } from "@/lib/data";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   Mail,
   Phone,
@@ -11,253 +12,281 @@ import {
   ArrowRight,
   User,
   Briefcase,
-  Award,
-  CheckCircle2,
   Code,
-  Globe,
-  Database,
-  ShieldCheck,
+  BookOpen,
+  GraduationCap,
   Building2,
-  Calendar
-} from 'lucide-react';
+  Trophy,
+} from "lucide-react";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
+  transition: { duration: 0.5 },
 };
 
 const services = [
-  { icon: <Code className="w-5 h-5 text-blue-500" />, title: 'Frontend Developer', desc: 'Crafting responsive, performance-driven web interfaces using React and Next.js.' },
-  { icon: <Globe className="w-5 h-5 text-purple-500" />, title: 'Fullstack Engineer', desc: 'Architecting end-to-end applications with the MERN stack and modern serverless technologies.' },
-  { icon: <Database className="w-5 h-5 text-emerald-500" />, title: 'Database Designer', desc: 'Building scalable data structures with MongoDB, SQL, and high-speed Redis caching.' },
-  { icon: <ShieldCheck className="w-5 h-5 text-amber-500" />, title: 'Security Architect', desc: 'Implementing robust security layers, RBAC systems, and secure authentication flows.' },
+  {
+    icon: <Code className="w-5 h-5" />,
+    title: "Frontend Developer",
+    desc: "Crafting responsive, performance-driven web interfaces using React and Next.js.",
+  },
+  {
+    icon: <Briefcase className="w-5 h-5" />,
+    title: "Fullstack Engineer",
+    desc: "Architecting end-to-end applications with the MERN stack and modern serverless technologies.",
+  },
+  {
+    icon: <Building2 className="w-5 h-5" />,
+    title: "Backend Specialist",
+    desc: "Building scalable REST APIs, microservices, and high-performance backend systems.",
+  },
+  {
+    icon: <Trophy className="w-5 h-5" />,
+    title: "Problem Solver",
+    desc: "Implementing RBAC systems, caching strategies, and enterprise-grade solutions.",
+  },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="pt-28 pb-20 px-4 sm:px-6 bg-background min-h-screen">
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
+    <div className="pt-20 pb-16 px-4 sm:px-6 bg-background">
+      <div className="max-w-7xl mx-auto">
+
+        {/* Header */}
         <motion.div
           initial="initial"
           animate="animate"
           variants={fadeIn}
           className="mb-16"
         >
-          <div className="w-16 h-2 bg-primary rounded-full mb-8" />
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-foreground tracking-tight leading-tight mb-6">
-            Everything starts with <span className="text-primary">Passion</span>.
+          <div className="w-14 h-1.5 bg-primary rounded-full mb-6" />
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6">
+            Everything starts with{" "}
+            <span className="text-primary italic">Passion</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl font-medium leading-relaxed">
-            I'm a Full-Stack Developer with a relentless focus on creating premium web experiences that solve real-world problems.
+
+          <p className="text-muted-foreground max-w-2xl text-base">
+            I'm a Full-Stack Developer focused on building modern web
+            applications with performance, scalability and clean design.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-12 items-start">
-          {/* Left Sidebar - Profile Info */}
+
+          {/* Sidebar */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="lg:col-span-4 space-y-8"
+            className="lg:col-span-4 space-y-6"
           >
-            {/* Identity Card */}
-            <Card className="rounded-[3rem] border-primary/20 overflow-hidden bg-background shadow-2xl shadow-primary/5 p-4 group">
-              <CardContent className="p-8 text-center flex flex-col items-center">
-                <Avatar className="w-40 h-40 rounded-[2.5rem] mb-8 shadow-2xl shadow-primary/20 ring-4 ring-primary/10">
-                  <AvatarFallback className="bg-gradient-to-br from-primary via-indigo-500 to-purple-600 text-white text-5xl font-black rounded-[2.5rem]">
+
+            <Card className="rounded-3xl border-border shadow-sm">
+              <CardContent className="p-6 flex flex-col items-center text-center space-y-6">
+
+                <Avatar className="w-36 h-36 rounded-3xl">
+                  <AvatarFallback className="bg-primary text-white text-4xl font-bold">
                     AK
                   </AvatarFallback>
                 </Avatar>
 
-                <h2 className="text-3xl font-black text-foreground mb-2">Ashish Kumar</h2>
-                <Badge variant="secondary" className="px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest bg-primary/5 text-primary border-none mb-8">
-                  Full-Stack Innovator
-                </Badge>
+                <div>
+                  <h2 className="text-2xl font-bold">Ashish Kumar</h2>
+                  <Badge className="mt-2 bg-primary/10 text-primary border-none">
+                    Full-Stack Developer
+                  </Badge>
+                </div>
+
+                <Separator />
 
                 <div className="w-full space-y-3">
-                  {[
-                    { icon: <Mail className="w-4 h-4" />, label: 'Direct Email', val: portfolioData.email, href: `mailto:${portfolioData.email}` },
-                    { icon: <Phone className="w-4 h-4" />, label: 'Direct Call', val: portfolioData.phone, href: `tel:${portfolioData.phone}` },
-                    { icon: <Linkedin className="w-4 h-4" />, label: 'LinkedIn', val: 'Profile', href: portfolioData.linkedin, ext: true },
-                    { icon: <Github className="w-4 h-4" />, label: 'GitHub', val: 'Repos', href: portfolioData.github, ext: true },
-                  ].map((item) => (
-                    <a key={item.label} href={item.href} target={item.ext ? "_blank" : undefined} rel="noopener noreferrer"
-                      className="flex items-center gap-4 p-4 rounded-3xl bg-muted/40 hover:bg-primary/10 transition-all duration-300 group/link">
-                      <div className="w-10 h-10 rounded-2xl flex items-center justify-center bg-background text-muted-foreground group-hover/link:text-primary transition-colors shadow-sm">
-                        {item.icon}
-                      </div>
-                      <div className="text-left flex-1">
-                        <p className="text-[9px] font-black uppercase tracking-[0.2em] text-muted-foreground">{item.label}</p>
-                        <p className="text-xs font-black text-foreground group-hover/link:text-primary transition-colors">{item.val}</p>
-                      </div>
-                    </a>
-                  ))}
+
+                  <a
+                    href={`mailto:${portfolioData.email}`}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-muted/40 hover:bg-muted"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span className="text-sm">{portfolioData.email}</span>
+                  </a>
+
+                  <a
+                    href={`tel:${portfolioData.phone}`}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-muted/40 hover:bg-muted"
+                  >
+                    <Phone className="w-4 h-4" />
+                    <span className="text-sm">{portfolioData.phone}</span>
+                  </a>
+
+                  <a
+                    href={portfolioData.linkedin}
+                    target="_blank"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-muted/40 hover:bg-muted"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    <span className="text-sm">LinkedIn</span>
+                  </a>
+
+                  <a
+                    href={portfolioData.github}
+                    target="_blank"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-muted/40 hover:bg-muted"
+                  >
+                    <Github className="w-4 h-4" />
+                    <span className="text-sm">GitHub</span>
+                  </a>
+
                 </div>
               </CardContent>
             </Card>
 
-            <Button className="w-full h-16 rounded-[2rem] font-black text-base shadow-2xl shadow-primary/20 gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all" asChild>
-              <a href="/resume.pdf" download="Ashish_Kumar_Resume.pdf">
-                <Download className="w-5 h-5" />
-                DOWLOAD FULL RESUME
+            <Button className="w-full h-12 shadow-none font-semibold" asChild>
+              <a href="/resume.pdf" download>
+                <Download className="w-4 h-4 mr-2" />
+                Download Resume
               </a>
             </Button>
+
           </motion.div>
 
-          {/* Main Content Areas */}
-          <div className="lg:col-span-8 space-y-16">
-            {/* Biography Section */}
+          {/* Main Section */}
+          <div className="lg:col-span-8 space-y-14">
+
+            {/* About */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="space-y-8"
             >
-              <h2 className="text-3xl font-black text-foreground flex items-center gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                  <User className="w-6 h-6" />
-                </div>
-                The Narrative
+
+              <h2 className="text-2xl font-bold flex items-center gap-3 mb-6">
+                <User className="w-5 h-5 text-primary" />
+                About Me
               </h2>
-              <div className="space-y-6">
-                {portfolioData.about.split('\n\n').map((para, i) => (
-                  <p key={i} className="text-xl leading-relaxed text-muted-foreground font-medium">
-                    {para}
-                  </p>
-                ))}
-              </div>
+
+              <p className="text-muted-foreground leading-relaxed">
+                {portfolioData.about}
+              </p>
+
             </motion.div>
 
-            {/* Specializations - Expertise Grid */}
+            {/* Core Expertise */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="space-y-10"
             >
-              <h2 className="text-3xl font-black text-foreground flex items-center gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-600">
-                  <Briefcase className="w-6 h-6" />
-                </div>
+
+              <h2 className="text-2xl font-bold flex items-center gap-3 mb-8">
+                <Code className="w-5 h-5 text-primary" />
                 Core Expertise
               </h2>
-              <div className="grid sm:grid-cols-2 gap-8">
+
+              <div className="grid sm:grid-cols-2 gap-6">
+
                 {services.map((item) => (
-                  <Card key={item.title} className="rounded-[2.5rem] border-border bg-muted/20 hover:border-primary/50 transition-all duration-500 group overflow-hidden">
-                    <CardContent className="p-10">
-                      <div className="w-16 h-16 rounded-3xl flex items-center justify-center bg-background group-hover:bg-primary/10 transition-colors mb-8 shadow-sm">
+                  <Card
+                    key={item.title}
+                    className="rounded-xl border-border bg-card hover:shadow-md hover:border-primary/40 transition-all duration-300"
+                  >
+                    <CardContent className="p-6">
+
+                      <div className="w-11 h-11 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
                         {item.icon}
                       </div>
-                      <h3 className="font-black text-2xl mb-4 text-foreground group-hover:text-primary transition-colors tracking-tight">{item.title}</h3>
-                      <p className="text-base font-medium leading-relaxed text-muted-foreground/80">
+
+                      <h3 className="font-semibold text-lg mb-2">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-sm text-muted-foreground">
                         {item.desc}
                       </p>
+
                     </CardContent>
                   </Card>
                 ))}
+
               </div>
             </motion.div>
 
-            {/* Work History Focused Segment */}
+            {/* Education */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="space-y-10"
             >
-              <h2 className="text-3xl font-black text-foreground flex items-center gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-600">
-                  <Building2 className="w-6 h-6" />
-                </div>
-                Professional Footprint
-              </h2>
-              <Card className="rounded-[3rem] border-primary/20 bg-primary/5 shadow-2xl shadow-primary/5 overflow-hidden group">
-                <CardContent className="p-10">
-                  <div className="flex flex-wrap items-start justify-between gap-8 mb-8">
-                    <div className="space-y-2">
-                      <h3 className="text-3xl font-black text-foreground tracking-tight">Software Engineer</h3>
-                      <p className="text-2xl font-black text-primary flex items-center gap-3">
-                        UXDLAB SOFTWARE
-                        <Badge className="bg-green-500/20 text-green-700 border-none font-bold text-[10px] tracking-widest px-4">
-                          ACTIVE
-                        </Badge>
-                      </p>
-                    </div>
-                    <div className="px-6 py-3 rounded-2xl bg-background border border-border shadow-sm flex items-center gap-3">
-                      <Calendar className="w-5 h-5 text-muted-foreground" />
-                      <span className="text-sm font-black text-muted-foreground uppercase tracking-widest">Aug 2025 – Now</span>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap gap-3">
-                    {['MERN Stack', 'Redis Architecture', 'Redux State', 'RBAC Systems', 'Stripe Payments', 'Clerk Auth'].map(t => (
-                      <Badge key={t} variant="secondary" className="px-5 py-2.5 rounded-2xl text-[11px] font-black uppercase tracking-wider bg-background text-muted-foreground border border-border/50 hover:bg-primary hover:text-white transition-all shadow-sm">
-                        {t}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
 
-            {/* Certifications Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="space-y-10"
-            >
-              <h2 className="text-3xl font-black text-foreground flex items-center gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-600">
-                  <Award className="w-6 h-6" />
-                </div>
-                Validation
+              <h2 className="text-2xl font-bold flex items-center gap-3 mb-6">
+                <GraduationCap className="w-5 h-5 text-primary" />
+                Education
               </h2>
-              <div className="grid gap-4">
-                {portfolioData.certificates.map((cert, i) => (
-                  <Card key={i} className="rounded-3xl border-border bg-card/60 hover:border-primary/40 transition-all duration-300 group">
-                    <CardContent className="p-6 flex items-center gap-6">
-                      <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center text-3xl flex-shrink-0 transition-transform group-hover:scale-110">
-                        🏅
+
+              <div className="space-y-4 max-w-4xl">
+
+                {portfolioData.education.map((edu, i) => (
+                  <Card key={i} className="rounded-xl border-border">
+                    <CardContent className="p-5 flex gap-4">
+
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <BookOpen className="w-4 h-4 text-primary" />
                       </div>
+
                       <div className="flex-1">
-                        <p className="font-black text-xl text-foreground mb-1">{cert}</p>
-                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground flex items-center gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />
-                          Simplilearn Accredited
+
+                        <div className="flex justify-between">
+                          <h3 className="font-semibold">
+                            {edu.degree}
+                          </h3>
+
+                          <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                            {edu.percentage}
+                          </span>
+                        </div>
+
+                        <p className="text-sm text-muted-foreground">
+                          {edu.institution}
                         </p>
+
+                        <p className="text-xs text-muted-foreground">
+                          {edu.duration}
+                        </p>
+
                       </div>
-                      <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-all opacity-0 group-hover:opacity-100 group-hover:translate-x-1" />
+
                     </CardContent>
                   </Card>
                 ))}
+
               </div>
             </motion.div>
 
-            {/* Quick Actions Footer */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex flex-wrap gap-4 pt-10"
-            >
-              <Button size="lg" className="h-16 px-10 rounded-3xl font-black text-base shadow-2xl shadow-primary/20 group hover:scale-[1.02] active:scale-[0.98] transition-all" asChild>
-                <Link href="/projects">
-                  BROWSE PROJECTS
-                  <ArrowRight className="w-5 h-5 ml-3 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="h-16 px-10 rounded-3xl font-black text-base bg-muted/20 border-border hover:border-primary/50 transition-all" asChild>
-                <Link href="/contact">
-                  WORK WITH ME
-                </Link>
-              </Button>
-            </motion.div>
+            {/* CTA */}
+            <div className="flex flex-wrap gap-4 pt-6">
+
+              <Link
+                href="/projects"
+                className="inline-flex items-center px-4 h-12 rounded-md bg-primary text-white font-medium text-sm transition-colors duration-200"
+              >
+                Browse Projects
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-4 h-12 rounded-md border border-gray-300 text-primary font-medium text-sm bg-primary/10 transition-colors duration-200"
+              >
+                Work With Me
+              </Link>
+
+            </div>
           </div>
         </div>
       </div>
