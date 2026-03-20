@@ -92,8 +92,7 @@ export default function ProjectDetailPage() {
                 />
 
                 <Button
-                  size="lg"
-                  className="rounded-md gap-2 py-1"
+                  className="gap-2 h-10 sm:h-12 px-6 sm:px-8 rounded-md font-bold text-xs uppercase tracking-wider bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20"
                   asChild
                 >
                   <a
@@ -101,7 +100,7 @@ export default function ProjectDetailPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <ExternalLink className="w-3 h-3" />
+                    <ExternalLink className="w-4 h-4" />
                     Live Demo
                   </a>
                 </Button>
@@ -154,15 +153,32 @@ export default function ProjectDetailPage() {
               </h2>
 
               <div className="space-y-4">
+                
+                {/* Desktop Overview */}
+                <div className={project.descriptionMobile ? "hidden md:block space-y-4" : "space-y-4"}>
+                  {project.description.split('\n\n').map((para, i) => (
+                    <p
+                      key={`desktop-${i}`}
+                      className="text-muted-foreground leading-relaxed"
+                    >
+                      {para}
+                    </p>
+                  ))}
+                </div>
 
-                {project.description.split('\n\n').map((para, i) => (
-                  <p
-                    key={i}
-                    className="text-muted-foreground leading-relaxed"
-                  >
-                    {para}
-                  </p>
-                ))}
+                {/* Mobile Overview */}
+                {project.descriptionMobile && (
+                  <div className="md:hidden space-y-4">
+                    {project.descriptionMobile.split('\n\n').map((para, i) => (
+                      <p
+                        key={`mobile-${i}`}
+                        className="text-muted-foreground leading-relaxed"
+                      >
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                )}
 
               </div>
 

@@ -41,7 +41,7 @@ export default function ProjectsPage() {
           className="mb-12 text-center"
         >
           <h1 className="text-4xl sm:text-6xl font-black text-foreground tracking-tighter leading-none mb-6">
-            The <span className="text-primary italic">Showcase.</span>
+            Live <span className="text-primary italic">Projects</span>
           </h1>
           <p className="text-base text-muted-foreground font-medium max-w-xl mx-auto leading-tight mb-8">
             Specialized solutions for enterprise challenges.

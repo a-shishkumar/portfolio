@@ -60,12 +60,17 @@ When I'm not coding, I'm exploring new technologies and sharpening my skills to 
       id: "alsabah-dashboard",
       title: "Alsabah Construction Management Dashboard",
       shortDesc: "Full-stack construction management dashboard with Redis caching and RBAC",
-      description: `A comprehensive enterprise-grade construction management dashboard built using the MERN stack. This platform manages projects, employees, and operational data for a construction company.
+      description: `This project is a comprehensive construction management system built using the MERN stack, designed to efficiently manage and monitor all aspects of construction operations. The platform centralizes project data, including project details, employee records, task assignments, and operational workflows, ensuring seamless coordination across teams.
 
-The system features Redis caching that reduced data processing latency by 70%, making large dataset operations significantly faster. Redux state management handles complex UI state across the application.
+The system implements Role-Based Access Control (RBAC) to provide secure and structured access for different user roles such as admins, managers, and employees. Authentication and authorization are handled using JWT (JSON Web Tokens), ensuring secure session management, while bcrypt is used for password encryption to protect user credentials.
 
-Role-Based Access Control (RBAC) ensures secure data management with different permission levels for admins, managers, and employees. The modern UI is built with React.js and shadcn UI components.`,
-      techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "Redux", "Redis", "shadcn UI", "RBAC"],
+To enhance performance, the application leverages Redis caching, significantly reducing data retrieval time and improving overall system responsiveness. Additionally, Redux is used for efficient state management, enabling smooth handling of complex UI interactions.
+
+The frontend is developed using React.js with modern UI components, delivering a responsive and user-friendly interface, while the backend is powered by Node.js and Express.js, ensuring scalable and robust API handling.
+
+Overall, the system provides a secure, scalable, and high-performance solution for managing construction projects and operational data in a centralized manner.`,
+      descriptionMobile: `This is a MERN-based construction management system that centralizes project, employee, and operational data. It uses RBAC for secure role-based access, JWT for authentication, and bcrypt for password security. Redis caching improves performance, while Redux manages complex UI state. The system is designed to be scalable, secure, and efficient for real-world construction workflows.`,
+      techStack: ["MERN", "Redux", "Redis", "JWT", "Bcrypt", "AWS S3", "TypeScript", "JavaScript", "Tailwind CSS", "Shadcn UI", "RBAC"],
       highlights: [
         "Reduced data processing latency by 70% using Redis caching",
         "Implemented RBAC for multi-level secure access",
@@ -81,12 +86,16 @@ Role-Based Access Control (RBAC) ensures secure data management with different p
       id: "bee-tennis",
       title: "Bee-Tennis",
       shortDesc: "Tennis enrollment platform with real-time registration and Stripe payments",
-      description: `A tennis enrollment platform developed using React and Firebase with real-time player registration and coaching sign-ups. The platform streamlines the enrollment process for tennis academies and coaching centers.
+      description: `This project is a modern tennis enrollment and management platform designed to streamline player registration, training bookings, and tournament participation. The system allows users to easily register online, enroll in training programs, and book coaching plans through a seamless and user-friendly interface.
 
-An admin dashboard allows staff to manage tournaments, users, and registrations efficiently from a single interface. Stripe payment gateway integration enables smooth, secure transaction processing.
+The application is built using React.js with TypeScript, ensuring a scalable and maintainable frontend architecture. Redux is used for efficient state management, enabling smooth handling of user data, bookings, and real-time updates. The UI is developed using shadcn UI components, providing a clean and responsive design.
 
-The React architecture was optimized to significantly improve workflow efficiency and deliver a seamless user experience for both players and administrators.`,
-      techStack: ["React.js", "Firebase", "Stripe", "Admin Dashboard"],
+For backend and real-time data handling, Firebase is used to manage authentication, database operations, and live updates. The platform integrates Stripe payment gateway, allowing users to securely book training plans and complete transactions online.
+
+An advanced admin dashboard is implemented to manage players, training sessions, tournaments, and registrations from a centralized interface. This improves operational efficiency and provides better control over platform activities.
+
+Overall, the system delivers a secure, scalable, and user-friendly solution for tennis academies to manage registrations, training programs, and tournaments efficiently.`,
+      techStack: ["HTML5", "CSS3", "Tailwind CSS", "Shadcn UI", "JavaScript", "TypeScript", "React.js", "Redux", "Firebase", "Stripe"],
       highlights: [
         "Real-time player registration using Firebase",
         "Stripe payment gateway integration",
@@ -97,6 +106,7 @@ The React architecture was optimized to significantly improve workflow efficienc
       githubLink: "",
       category: "Web App",
       color: "green",
+      descriptionMobile: `A complete tennis enrollment and management platform that effortlessly handles online player registration, dynamic training plan bookings, and multi-tier tournament enrollments. Engineered using modern web technologies like React.js, TypeScript, Redux, and real-time Firebase, complete with Stripe integration for secure checkout. It also offers a fully-featured admin dashboard to centrally monitor users, coaching sessions, and real-time operational data.`,
     },
     {
       id: "ai-content-generator",
@@ -114,10 +124,11 @@ Next.js server-side rendering improved performance and SEO, reducing load time b
         "30% reduction in load time with Next.js SSR",
         "Drizzle ORM for type-safe database operations",
       ],
-      liveLink: "",
-      githubLink: "",
+      liveLink: "https://ai-content-generator-mu-pink.vercel.app",
+      githubLink: "https://github.com/Ashishkumar/Ai_content_generator",
       category: "AI Tool",
       color: "purple",
+      descriptionMobile: "",
     },
     {
       id: "chat-app",
@@ -139,17 +150,20 @@ MongoDB stores user data and complete chat history, enabling users to access the
       githubLink: "",
       category: "Full Stack",
       color: "orange",
+      descriptionMobile: "",
     },
     {
       id: "reliable-fuel",
       title: "Reliable Fuel",
       shortDesc: "Fuel order management system with real-time tracking and Stripe payments",
-      description: `A fuel order management system built with React, Redux, and Firebase featuring real-time order tracking. The platform allows customers to place fuel orders online and track delivery status in real-time.
+      description: `This project is a fuel delivery management system designed to simplify the process of ordering and delivering fuel online. The platform allows customers to place fuel orders, track delivery status in real-time, and make secure payments through an integrated system.
 
-An admin dashboard provides comprehensive control over orders, deliveries, and customer data from a centralized interface. Redux ensures consistent state management across the complex order workflow.
+The application is built using React.js with Redux, ensuring efficient state management and smooth handling of order workflows. Firebase is used for real-time database operations and live order tracking, enabling instant updates between customers, admins, and delivery drivers.
 
-Stripe payment integration enables secure online transactions. Backend workflow optimization reduced page load time by 40%, delivering a fast, reliable experience for customers and admins alike.`,
-      techStack: ["React.js", "Redux", "Firebase", "Stripe", "Admin Dashboard"],
+An admin dashboard provides centralized control to manage customer orders, assign deliveries to drivers, and monitor overall system activity. Delivery drivers can update order status in real-time, improving transparency and operational efficiency.
+
+The platform also integrates Stripe payment gateway, allowing users to make secure online payments. The system is optimized for performance, delivering a fast and reliable experience for both customers and administrators.`,
+      techStack: ["HTML5", "CSS3", "Tailwind CSS", "Shadcn UI", "JavaScript", "TypeScript", "React.js", "Redux", "Firebase", "Stripe"],
       highlights: [
         "Real-time order tracking with Firebase",
         "40% reduction in page load time",
@@ -160,6 +174,97 @@ Stripe payment integration enables secure online transactions. Backend workflow 
       githubLink: "",
       category: "Web App",
       color: "red",
+      descriptionMobile: `A comprehensive fuel delivery management system that enables customers to seamlessly place online orders, track live deliveries, and perform secure transactions using Stripe. Built natively on a robust Javascript stack powered by React.js, Redux, and Firebase. It features a fully responsive design and includes a high-level admin dashboard designed to centrally administer complete order lifecycle, customer analytics, and optimize driver dispatch operations.`,
+    },
+    {
+      id: "star-clinic",
+      title: "Star Clinic Management",
+      shortDesc: "Clinic management platform for doctors with secure dashboard handling facilities and emails.",
+      description: `This project is a modern clinic and healthcare management application tailored specifically for doctors and medical staff to streamline patient care, facility management, and surgical operations. The platform offers an extensive suit of tools for scheduling patient appointments, managing specialized facilities such as surgery wards, and overseeing complete clinic administration.
+
+The application leverages React.js and Redux to deliver a scalable and highly responsive user interface. Using Firebase for real-time data handling, the app enables instant updates for appointment bookings, facility scheduling, and patient history retrieval, ensuring seamless coordination across the clinic.
+
+An advanced centralized admin dashboard empowers doctors to effectively manage all operational aspects of the clinic. The system also accommodates an integrated automated email notification module that ensures patients and staff are promptly informed of schedules and surgery preparations.
+
+Additionally, Stripe is integrated to securely handle online payments for consultations and medical facility limits. The robust architecture guarantees an optimized, scalable, and fully secure healthcare management solution.`,
+      techStack: ["HTML5", "CSS3", "Tailwind CSS", "Shadcn UI", "JavaScript", "TypeScript", "React.js", "Redux", "Firebase", "Stripe"],
+      highlights: [
+        "Advanced admin dashboard for complete clinic management",
+        "Automated email notifications for patient coordination",
+        "Integration of surgical and specialized facility tracking",
+        "Secure Stripe payment configurations for health services",
+      ],
+      liveLink: "https://starclinic-app-main.pages.dev/",
+      githubLink: "",
+      category: "Health Tech",
+      color: "teal",
+      descriptionMobile: `A highly responsive clinic administration platform built for doctors to manage patient appointments, surgical facilities, and online payments globally. Developed exclusively using React.js, Redux, and Firebase alongside Stripe, the app features a centralized dashboard for facility control and automated email notifications for dependable communication.`,
+    },
+    {
+      id: "ai-support-chatbot",
+      title: "AI Support Chatbot",
+      shortDesc: "Intelligent customer helpdesk and website assistant powered by Gemini AI.",
+      description: `An advanced support chatbot solution developed specifically for live websites to automate customer help queries and seamlessly provide detailed information to users. The system incorporates the powerful Gemini API to analyze complex customer questions and generate intelligent, context-aware responses in real-time.
+
+At the core of the application lies a comprehensive centralized backend dashboard that allows administrators to fully manage and oversee the chatbot's interactions. The dashboard offers transparent analytics on customer inquiries, enables manual monitoring, and allows operators to closely track conversational workflows to ensure top-notch customer support.
+
+Utilizing modern technologies like React.js and Tailwind CSS for the frontend, coupled with robust server mechanisms, the platform delivers an extremely smooth and responsive chat interface. This setup greatly reduces overall response time, minimizing human workload, and improving overall customer engagement metrics across the live space.`,
+      techStack: ["React.js", "Tailwind CSS", "Gemini API", "Node.js", "Express.js", "MongoDB", "Shadcn UI", "Admin Dashboard"],
+      highlights: [
+        "Gemini AI integration for intelligent real-time conversational responses",
+        "Comprehensive admin dashboard for chat administration control",
+        "Automated website customer support reducing operational bottlenecks",
+        "Highly responsive chat interface utilizing Tailwind and React.js",
+      ],
+      liveLink: "https://chatbot-widget-d83.pages.dev/",
+      githubLink: "",
+      category: "AI Tool",
+      color: "blue",
+      descriptionMobile: `An intelligent customer support chatbot powered by the Gemini AI API, designed specifically to automate website assistance and user inquiries. Built natively with React.js and Tailwind CSS, the system includes an extensive administrative dashboard allowing staff to tightly manage chat histories, dictate support parameters, and analyze conversational data.`,
+    },
+    {
+      id: "worldwide-news",
+      title: "Worldwide News Portal",
+      shortDesc: "Real-time category-based worldwide news aggregator powered by News API.",
+      description: `A highly interactive and dynamic news aggregator built with React.js that seamlessly keeps users updated with worldwide happenings in real-time. The application directly leverages the News API to fetch top headlines and categorize them precisely into fields such as technology, science, sports, and business.
+
+The web app is structured utilizing a combination of Tailwind CSS and Bootstrap to provide a highly responsive and visually appealing interface across all device formats. This ensures that users can effortlessly switch between different news categories and read the full articles completely unhindered regardless of their screen size.
+
+Furthermore, the project actively utilizes robust JavaScript functionalities to manage component states, handle asynchronous API requests smoothly, and optimize the overarching user experience, making global information easily accessible at a click.`,
+      techStack: ["React.js", "News API", "Bootstrap", "Tailwind CSS", "JavaScript", "HTML5", "CSS3"],
+      highlights: [
+        "Real-time worldwide news fetching via external News API",
+        "Categorized news browsing for specific global topics",
+        "Highly responsive UI combining Tailwind CSS and Bootstrap",
+        "Optimized asynchronous data mapping mechanisms",
+      ],
+      liveLink: "https://news07webapp.vercel.app/",
+      githubLink: "",
+      category: "Web App",
+      color: "indigo",
+      descriptionMobile: `A fast, real-time news aggregator that fetches worldwide headlines using the News API. Built dynamically with React.js, Tailwind CSS, and Bootstrap, the app allows users to filter news by specific categories seamlessly. It provides a highly responsive interface ensuring global information is easily accessible across any mobile or tablet device.`,
+    },
+    {
+      id: "ecommerce-platform",
+      title: "E-Commerce Web App",
+      shortDesc: "A modern e-commerce storefront with dynamic cart functionality.",
+      description: `An elegant and scalable e-commerce platform developed to deliver a seamless online shopping experience. The application features a dynamic storefront outlining vast catalogs of products with intuitive filtering and sorting parameters suitable for retail scopes.
+
+The frontend infrastructure utilizes React.js alongside state management powered by Redux ensuring complex product data, shopping cart logic, and user session context remain perfectly synchronized across the platform.
+
+The UI leverages a combination of Tailwind CSS and specialized Shadcn UI components yielding a highly polished, responsive interface that functions beautifully across the full spectrum of desktop and mobile devices.`,
+      techStack: ["HTML5", "CSS3", "Tailwind CSS", "Shadcn UI", "JavaScript", "TypeScript", "React.js", "Redux"],
+      highlights: [
+        "Advanced shopping cart logic powered by robust Redux implementations",
+        "Polished, responsive product storefront via Tailwind and Shadcn UI",
+        "Dynamic catalog filtering and data mapping structures",
+        "Optimized frontend routing algorithms for swifter navigation",
+      ],
+      liveLink: "",
+      githubLink: "",
+      category: "E-Commerce",
+      color: "orange",
+      descriptionMobile: `A fully responsive e-commerce web platform showcasing advanced storefronts. Employing React.js and Redux, it gracefully handles complex shopping cart logic and dynamic product rendering. Built natively utilizing Tailwind CSS and Shadcn UI components for an incredibly aesthetic and functional shopping interaction.`,
     },
   ],
 };

@@ -254,7 +254,7 @@ export default function ExperiencePage() {
           </Link>
         </Button>
 
-        <Button variant="outline" className="rounded-md" size="default" asChild>
+        <Button variant="outline" className="rounded-md text-primary hover:text-primary border-primary hover:border-primary hover:bg-primary/10" size="default" asChild>
           <Link href="/contact">
             Contact Me
           </Link>
