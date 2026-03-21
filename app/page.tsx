@@ -86,7 +86,7 @@ export default function HomePage() {
               <div className="space-y-4">
                 <motion.h1
                   variants={fadeIn}
-                  className="text-5xl sm:text-3xl  lg:text-6xl font-black leading-[1] tracking-tight"
+                  className="text-5xl sm:text-3xl  lg:text-6xl font-black leading-[1.3] tracking-tight"
                 >
                   Building <span className="text-primary italic">Better</span>
                   <br />
@@ -114,10 +114,10 @@ export default function HomePage() {
               >
                 <Button
                   size="sm"
-                  className="group h-11 flex-1 sm:flex-none px-3 sm:px-6 rounded-lg font-semibold text-black bg-primary shadow-none transition-all duration-300 active:scale-95"
+                  className="group h-11 flex-1 sm:flex-none px-3 sm:px-6 rounded-lg font-semibold text-black bg-primary shadow-none transition-all duration-300 active:scale-95 "
                   asChild
                 >
-                  <Link href="/projects" className="flex items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-sm">
+                  <Link href="/projects" className="flex items-center justify-center gap-1.5 sm:gap-2 ">
                     View My Work
                     <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
@@ -131,7 +131,7 @@ export default function HomePage() {
                 >
                   <Link
                     href="/contact"
-                    className="flex items-center justify-center gap-1.5 sm:gap-2 text-primary text-[11px] sm:text-sm"
+                    className="flex items-center justify-center gap-1.5 sm:gap-2 text-primary"
                   >
                     <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
                     <span className="font-semibold">Get in Touch</span>
@@ -177,12 +177,13 @@ export default function HomePage() {
 
                 <Button
                   variant="ghost"
-                  className="flex items-center gap-2 px-4 h-11 rounded-lg border border-primary/30 bg-primary/10 hover:bg-primary/20 transition-all shadow-sm shadow-primary/5 font-semibold group"
+                  size="sm"
+                  className="flex items-center justify-center gap-2 px-3 sm:px-5 h-11 rounded-lg border border-primary/30 bg-primary/10 hover:bg-primary/20 transition-all shadow-sm shadow-primary/5 font-semibold group"
                   asChild
                 >
-                  <a href="https://drive.google.com/file/d/1p7w7X78VVektBDVCsHzf8oAsLHM_Syfv/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary">
-                    <Download className="w-4 h-4 group-hover:translate-y-0.5 transition" />
-                    <span className="text-sm">Download CV</span>
+                  <a href="https://drive.google.com/file/d/1p7w7X78VVektBDVCsHzf8oAsLHM_Syfv/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 sm:gap-2 text-primary">
+                    <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary group-hover:translate-y-0.5 transition" />
+                    <span className="font-semibold">Download CV</span>
                   </a>
                 </Button>
               </motion.div>
@@ -517,7 +518,7 @@ export default function HomePage() {
                   className="group h-11 flex-1 sm:flex-none px-3 sm:px-6 rounded-lg font-semibold text-black bg-primary shadow-none transition-all duration-300 active:scale-95"
                   asChild
                 >
-                  <Link href="/contact" className="flex items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-sm">
+                  <Link href="/contact" className="flex items-center justify-center gap-1.5 sm:gap-2">
                     Start Project
                     <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
@@ -529,7 +530,7 @@ export default function HomePage() {
                   className="flex items-center justify-center flex-1 sm:flex-none gap-2 px-3 sm:px-5 h-11 rounded-lg border border-primary/30 bg-primary/10 hover:bg-primary/20 transition-all shadow-sm shadow-primary/5 font-semibold"
                   asChild
                 >
-                  <Link href="/about" className="flex items-center gap-2 text-primary text-[11px] sm:text-sm">
+                  <Link href="/about" className="flex items-center gap-2 text-primary">
                     <span className="font-semibold">My Experience</span>
                   </Link>
                 </Button>

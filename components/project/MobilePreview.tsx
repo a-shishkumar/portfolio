@@ -14,8 +14,8 @@ export function MobilePreview({ url, buttonText = "Mobile Preview", className = 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="default" className={`gap-2 h-10 sm:h-12 px-6 sm:px-8 rounded-md font-bold text-xs uppercase tracking-wider bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 ${className}`}>
-          <Smartphone className="w-4 h-4" />
+        <Button variant="default" className={`gap-1.5 sm:gap-2 h-11 flex-1 sm:flex-none px-3 sm:px-8 rounded-md font-black text-[10px] uppercase tracking-widest bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 ${className}`}>
+          <Smartphone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           {buttonText}
         </Button>
       </DialogTrigger>

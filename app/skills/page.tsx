@@ -160,7 +160,7 @@ export default function SkillsPage() {
 
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white rounded-lg font-medium hover:opacity-90 transition"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-black rounded-lg font-medium hover:opacity-90 transition"
           >
             View Projects
             <ArrowRight className="w-4 h-4" />

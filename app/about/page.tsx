@@ -274,7 +274,7 @@ export default function AboutPage() {
 
               <Link
                 href="/projects"
-                className="inline-flex items-center px-4 h-12 rounded-md bg-primary text-black font-medium text-sm transition-colors duration-200"
+                className="inline-flex items-center px-4 h-12 rounded-md bg-primary text-black font-medium text-[10px] uppercase tracking-widest transition-colors duration-200"
               >
                 Browse Projects
                 <ArrowRight className="ml-2 w-4 h-4" />
@@ -282,7 +282,7 @@ export default function AboutPage() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center px-4 h-12 rounded-md border border-primary text-primary font-medium text-sm bg-primary/10 transition-colors duration-200"
+                className="inline-flex items-center px-4 h-12 rounded-md border border-primary text-primary font-medium text-[10px] uppercase tracking-widest bg-primary/10 transition-colors duration-200"
               >
                 Work With Me
               </Link>

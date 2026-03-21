@@ -6,13 +6,17 @@ import Footer from '@/components/Footer';
 import { Toaster } from 'sonner';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
 
   useEffect(() => {
     const saved = localStorage.getItem('theme');
-    if (saved === 'dark') {
+    if (saved === 'light') {
+      setDark(false);
+      document.documentElement.classList.remove('dark');
+    } else {
       setDark(true);
       document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     }
   }, []);
 
@@ -29,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="dark">
       <head>
         <title>Ashish Kumar — MERN Stack Developer</title>
         <meta name="description" content="Portfolio of Ashish Kumar, MERN Stack Developer" />

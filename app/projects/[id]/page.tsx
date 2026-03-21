@@ -81,7 +81,7 @@ export default function ProjectDetailPage() {
             {project.shortDesc}
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-row flex-wrap w-full gap-2 sm:gap-4">
 
             {project.liveLink ? (
               <>
@@ -92,15 +92,16 @@ export default function ProjectDetailPage() {
                 />
 
                 <Button
-                  className="gap-2 h-10 sm:h-12 px-0 sm:px-6 sm:px-8 rounded-md font-bold text-xs uppercase tracking-wider bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20"
+                  className="gap-1.5 sm:gap-2 h-11 flex-1 sm:flex-none px-3 sm:px-8 rounded-md font-black text-[10px] uppercase tracking-widest bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20"
                   asChild
                 >
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 sm:gap-2"
                   >
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     Live Demo
                   </a>
                 </Button>
@@ -114,17 +115,17 @@ export default function ProjectDetailPage() {
 
             {project.githubLink && (
               <Button
-                size="lg"
                 variant="outline"
-                className="rounded-md"
+                className="rounded-md h-11 flex-1 sm:flex-none px-3 sm:px-8 font-black text-[10px] uppercase tracking-widest"
                 asChild
               >
                 <a
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 sm:gap-2"
                 >
-                  <Github className="w-4 h-4 mr-2" />
+                  <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   Source Code
                 </a>
               </Button>
