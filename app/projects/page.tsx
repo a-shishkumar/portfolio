@@ -32,12 +32,12 @@ export default function ProjectsPage() {
   }, [activeCategory, searchQuery]);
 
   return (
-    <div className="pt-24 pb-20 px-4 sm:px-6 bg-background min-h-screen">
-      <div className="max-w-6xl mx-auto">
+    <div className="pt-24 pb-20 px-0 sm:px-6 bg-background min-h-screen">
+      <div className="container mx-auto max-w-6xl">
         {/* Header - Cleaner & Tighter */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
           className="mb-12 text-center"
         >
           <h1 className="text-4xl sm:text-6xl font-black text-foreground tracking-tighter leading-none mb-6">
@@ -56,8 +56,8 @@ export default function ProjectsPage() {
           <AnimatePresence>
             {isDataLoading && (
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0 }}
                 className="absolute inset-0 z-10 flex items-center justify-center bg-background/50 backdrop-blur-sm rounded-3xl"
               >

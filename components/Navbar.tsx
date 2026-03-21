@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "Story" },
-  { href: "/skills", label: "Stack" },
-  { href: "/projects", label: "Work" },
-  { href: "/experience", label: "Exp" },
-  { href: "/contact", label: "Talk" },
+  { href: "/about", label: "About" },
+  { href: "/skills", label: "Skills" },
+  { href: "/projects", label: "Projects" },
+  { href: "/experience", label: "Experience" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar({
@@ -126,7 +126,7 @@ export default function Navbar({
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             className="md:hidden absolute top-24 inset-x-4 p-6 rounded-[2rem] bg-background/95 backdrop-blur-3xl border border-white/10 shadow-2xl z-[70]"
           >
-            <div className="grid grid-cols-2 gap-2">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -135,14 +135,14 @@ export default function Navbar({
                   className={cn(
                     "px-6 py-5 rounded-2xl text-[10px] font-black uppercase tracking-widest flex items-center gap-3 transition-all",
                     pathname === link.href
-                      ? "bg-primary text-white shadow-lg shadow-primary/20"
+                      ? "bg-primary text-black shadow-lg shadow-primary/20"
                       : "bg-muted/50 text-muted-foreground hover:bg-primary/5 hover:text-primary",
                   )}
                 >
                   <div
                     className={cn(
                       "w-1.5 h-1.5 rounded-full",
-                      pathname === link.href ? "bg-white" : "bg-primary/30",
+                      pathname === link.href ? "bg-black" : "bg-primary/30",
                     )}
                   />
                   {link.label}

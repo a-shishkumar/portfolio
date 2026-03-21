@@ -21,9 +21,9 @@ export default function Template({ children }: { children: React.ReactNode }) {
             </AnimatePresence>
 
             <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: loading ? 0 : 1 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: loading ? 0 : 1, x: loading ? 50 : 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
             >
                 {children}
             </motion.div>

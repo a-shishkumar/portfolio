@@ -25,8 +25,8 @@ import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
 const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0 },
   transition: { duration: 0.5 }
 };
 
@@ -76,8 +76,8 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="pt-28 pb-20 px-4 sm:px-6 bg-background min-h-screen">
-      <div className="max-w-6xl mx-auto">
+    <div className="pt-28 pb-20 px-0 sm:px-6 bg-background min-h-screen">
+      <div className="container mx-auto max-w-6xl">
         {/* Header Section */}
         <motion.div
           initial="initial"
@@ -98,7 +98,7 @@ export default function ContactPage() {
           {/* Left - Contact Methods */}
           <div className="lg:col-span-1 space-y-8">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
@@ -119,7 +119,7 @@ export default function ContactPage() {
               {contactOptions.map((item, i) => (
                 <motion.div
                   key={item.label}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 * i + 0.3 }}
                 >
@@ -152,8 +152,8 @@ export default function ContactPage() {
           {/* Right - Form */}
           <div className="lg:col-span-2">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
             >
               <Card className="shadow-sm bg-card border">

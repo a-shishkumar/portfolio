@@ -18,15 +18,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0 },
   transition: { duration: 0.5 },
 };
 
 export default function ExperiencePage() {
-  return (<div className="pt-28 pb-20 px-4 sm:px-6 bg-background min-h-screen">
+  return (<div className="pt-28 pb-20 px-0 sm:px-6 bg-background min-h-screen">
 
-    <div className="max-w-6xl mx-auto">
+    <div className="container mx-auto max-w-6xl">
 
       {/* Header */}
       <motion.div
@@ -51,8 +51,8 @@ export default function ExperiencePage() {
 
       {/* EXPERIENCE */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         className="mt-20"
       >
@@ -203,8 +203,8 @@ export default function ExperiencePage() {
 
       {/* CERTIFICATIONS */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         className="mt-20 space-y-10"
       >
@@ -217,22 +217,24 @@ export default function ExperiencePage() {
         <div className="grid md:grid-cols-2 gap-6">
 
           {portfolioData.certificates.map((cert, i) => (
-            <Card key={i}>
-              <CardContent className="p-6 flex items-center gap-4">
+            <a href={cert.link} target="_blank" rel="noopener noreferrer" key={i}>
+              <Card className="hover:border-primary/50 transition-colors group border-l-4 border-l-primary">
+                <CardContent className="p-6 flex items-center gap-4">
 
-                <div className="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg">
-                  <CheckCircle2 className="w-5 h-5 text-primary" />
-                </div>
+                  <div className="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg group-hover:scale-110 transition-transform">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                  </div>
 
-                <div>
-                  <p className="font-semibold">{cert}</p>
-                  <p className="text-sm text-muted-foreground">
-                    Simplilearn Certified
-                  </p>
-                </div>
+                  <div>
+                    <p className="font-semibold group-hover:text-primary transition-colors">{cert.title}</p>
+                    <p className="text-sm text-muted-foreground mt-1 text-[11px] font-bold uppercase tracking-widest text-primary/70 flex items-center gap-1">
+                      View Certificate
+                    </p>
+                  </div>
 
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </a>
           ))}
 
         </div>
@@ -240,10 +242,52 @@ export default function ExperiencePage() {
       </motion.div>
 
 
+      {/* SERVICES */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="mt-20 space-y-10"
+      >
+        <h2 className="text-3xl font-bold flex items-center gap-3">
+          <Code2 className="w-6 h-6 text-primary" />
+          Offered Services
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              title: "Web Development",
+              desc: "Building highly scalable, robust, and performant full-stack web applications tailored for your business using MERN and Next.js.",
+            },
+            {
+              title: "UI/UX Design",
+              desc: "Crafting modern, intuitive, and responsive user interfaces that provide an unparalleled aesthetic and functional user experience.",
+            },
+            {
+              title: "App Development",
+              desc: "Developing seamless and scalable mobile-first progressive web apps that run beautifully across all modern devices.",
+            },
+          ].map((service, i) => (
+            <Card key={i} className="hover:border-primary/50 transition-all duration-300 bg-card hover:bg-muted/10 group">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Code2 className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-lg tracking-tight mb-2 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {service.desc}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </motion.div>
+
+
       {/* CTA */}
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
         className="mt-16 flex flex-wrap gap-4"
       >
 

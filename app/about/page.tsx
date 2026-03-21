@@ -20,14 +20,14 @@ import {
 } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
 const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0 },
   transition: { duration: 0.5 },
 };
 
@@ -56,8 +56,8 @@ const services = [
 
 export default function AboutPage() {
   return (
-    <div className="pt-20 pb-16 px-4 sm:px-6 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <div className="pt-20 pb-16 px-0 sm:px-6 bg-background">
+      <div className="container mx-auto max-w-6xl">
 
         {/* Header */}
         <motion.div
@@ -83,7 +83,7 @@ export default function AboutPage() {
 
           {/* Sidebar */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
             className="lg:col-span-4 space-y-6"
@@ -93,6 +93,7 @@ export default function AboutPage() {
               <CardContent className="p-6 flex flex-col items-center text-center space-y-6">
 
                 <Avatar className="w-36 h-36 rounded-3xl">
+                  <AvatarImage src="/profileImg.svg" alt="Ashish Kumar" className="object-cover" />
                   <AvatarFallback className="bg-primary text-white text-4xl font-bold">
                     AK
                   </AvatarFallback>
@@ -147,8 +148,8 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Button className="w-full h-12 shadow-none font-semibold" asChild>
-              <a href="/resume.pdf" download>
+            <Button className="w-full h-12  font-semibold shadow-none hover:shadow-none" asChild>
+              <a href="https://drive.google.com/file/d/1p7w7X78VVektBDVCsHzf8oAsLHM_Syfv/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                 <Download className="w-4 h-4 mr-2" />
                 Download Resume
               </a>
@@ -161,8 +162,8 @@ export default function AboutPage() {
 
             {/* About */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
 
@@ -179,12 +180,12 @@ export default function AboutPage() {
 
             {/* Core Expertise */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
 
-              <h2 className="text-2xl font-bold flex items-center gap-3 mb-8">
+              <h2 className="text-2xl  font-bold flex items-center gap-3 mb-8">
                 <Code className="w-5 h-5 text-primary" />
                 Core Expertise
               </h2>
@@ -219,8 +220,8 @@ export default function AboutPage() {
 
             {/* Education */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
 
@@ -232,7 +233,7 @@ export default function AboutPage() {
               <div className="space-y-4 max-w-4xl">
 
                 {portfolioData.education.map((edu, i) => (
-                  <Card key={i} className="rounded-xl border-border">
+                  <Card key={i} className="rounded-xl border-border border-l-4 border-l-primary">
                     <CardContent className="p-5 flex gap-4">
 
                       <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -273,7 +274,7 @@ export default function AboutPage() {
 
               <Link
                 href="/projects"
-                className="inline-flex items-center px-4 h-12 rounded-md bg-primary text-white font-medium text-sm transition-colors duration-200"
+                className="inline-flex items-center px-4 h-12 rounded-md bg-primary text-black font-medium text-sm transition-colors duration-200"
               >
                 Browse Projects
                 <ArrowRight className="ml-2 w-4 h-4" />
@@ -281,7 +282,7 @@ export default function AboutPage() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center px-4 h-12 rounded-md border border-gray-300 text-primary font-medium text-sm bg-primary/10 transition-colors duration-200"
+                className="inline-flex items-center px-4 h-12 rounded-md border border-primary text-primary font-medium text-sm bg-primary/10 transition-colors duration-200"
               >
                 Work With Me
               </Link>

@@ -53,7 +53,12 @@ When I'm not coding, I'm exploring new technologies and sharpening my skills to 
     },
   ],
 
-  certificates: ["Certificate of completion in ReactJS for beginners by Simplilearn"],
+  certificates: [
+    {
+      title: "Certificate of completion in ReactJS for beginners by Simplilearn",
+      link: "https://drive.google.com/file/d/1jKXOvUrIfKl12KChihFvsszSznFHcfIQ/view?usp=sharing"
+    }
+  ],
 
   projects: [
     {
@@ -265,6 +270,28 @@ The UI leverages a combination of Tailwind CSS and specialized Shadcn UI compone
       category: "E-Commerce",
       color: "orange",
       descriptionMobile: `A fully responsive e-commerce web platform showcasing advanced storefronts. Employing React.js and Redux, it gracefully handles complex shopping cart logic and dynamic product rendering. Built natively utilizing Tailwind CSS and Shadcn UI components for an incredibly aesthetic and functional shopping interaction.`,
+    },
+    {
+      id: "baoc-club",
+      title: "British Army Orienteering Club",
+      shortDesc: "Official platform for BAOC featuring event calendars, training resources, and photo galleries.",
+      description: `A dedicated website built for the British Army Orienteering Club (BAOC). The platform serves as the central hub for the club, allowing members to access resources on orienteering training and participate in organized events.
+
+The website features an interactive event calendar where users can find the latest schedule and updates regarding upcoming competitions and training camps. A dedicated photo gallery section is also integrated, enabling the club to showcase pictures from past events and foster community engagement.
+
+The domain infrastructure is managed using Fasthosts, ensuring a reliable and fast experience for the club's members and visitors across different devices.`,
+      techStack: ["HTML5", "CSS3", "JavaScript", "Fasthosts", "Next.js", "Tailwind CSS"],
+      highlights: [
+        "Interactive calendar for events and new updates",
+        "Dedicated photo gallery showcasing community activities",
+        "Training and resources section for orienteering members",
+        "Domain and infrastructure managed via Fasthosts",
+      ],
+      liveLink: "https://baoc.info/",
+      githubLink: "",
+      category: "Frontend",
+      color: "green",
+      descriptionMobile: `A dedicated platform for the British Army Orienteering Club (BAOC) that provides members with access to training materials, event organizations, and a live update calendar. The website also includes a dynamic photo gallery to showcase the community's orienteering events, with domain management handled by Fasthosts.`,
     },
   ],
 };

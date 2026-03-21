@@ -28,8 +28,8 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
 const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0 },
   transition: { duration: 0.5 }
 };
 
@@ -41,13 +41,13 @@ export default function ProjectDetailPage() {
   if (!project) return notFound();
 
   return (
-    <div className="pt-24 pb-16 px-4 sm:px-6 bg-background min-h-screen">
+    <div className="pt-24 pb-16 px-0 sm:px-6 bg-background min-h-screen">
 
-      <div className="max-w-6xl mx-auto">
+      <div className="container mx-auto max-w-6xl">
 
         {/* Navigation */}
         <motion.div
-          initial={{ opacity: 0, x: -10 }}
+          initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           className="mb-12 flex justify-between items-center"
         >
@@ -92,7 +92,7 @@ export default function ProjectDetailPage() {
                 />
 
                 <Button
-                  className="gap-2 h-10 sm:h-12 px-6 sm:px-8 rounded-md font-bold text-xs uppercase tracking-wider bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20"
+                  className="gap-2 h-10 sm:h-12 px-0 sm:px-6 sm:px-8 rounded-md font-bold text-xs uppercase tracking-wider bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20"
                   asChild
                 >
                   <a
@@ -142,8 +142,8 @@ export default function ProjectDetailPage() {
 
             {/* Description */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
 
@@ -187,8 +187,8 @@ export default function ProjectDetailPage() {
 
             {/* Highlights */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
 
@@ -343,8 +343,8 @@ export default function ProjectDetailPage() {
 
         {/* Footer Navigation */}
         <motion.section
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="mt-20 pt-12 border-t"
         >

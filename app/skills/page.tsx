@@ -48,13 +48,14 @@ const skillLevels: Record<string, number> = {
 
 export default function SkillsPage() {
   return (
-    <div className="pt-24 pb-20 px-6 min-h-screen bg-white dark:bg-gray-950">
-      <div className="max-w-6xl mx-auto">
+    <div className="pt-24 pb-20 px-0 sm:px-6 min-h-screen bg-white dark:bg-gray-950">
+      <div className="container mx-auto max-w-6xl">
 
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-16 text-center"
         >
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
@@ -74,9 +75,10 @@ export default function SkillsPage() {
 
             <motion.div
               key={category}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: ci * 0.05 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: ci * 0.1, duration: 0.5, ease: "easeOut" }}
               className="rounded-2xl border border-gray-200 dark:border-gray-800 p-8 bg-white dark:bg-gray-900 hover:shadow-lg transition"
             >
 
@@ -104,7 +106,8 @@ export default function SkillsPage() {
 
                 {items.map((skill: string, i: number) => {
 
-                  const level = skillLevels[skill] || 70;
+                  const defaultLevels = [85, 90, 80, 75, 88, 82, 78, 92, 86, 72];
+                  const level = skillLevels[skill] || defaultLevels[(ci * 7 + i) % defaultLevels.length];
 
                   return (
                     <div key={i}>
@@ -127,8 +130,9 @@ export default function SkillsPage() {
 
                         <motion.div
                           initial={{ width: 0 }}
-                          animate={{ width: `${level}%` }}
-                          transition={{ duration: 0.8 }}
+                          whileInView={{ width: `${level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.8, ease: "easeOut" }}
                           className="h-full bg-primary rounded-full"
                         />
 
@@ -147,8 +151,10 @@ export default function SkillsPage() {
 
         {/* Bottom CTA */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mt-20 text-center"
         >
 

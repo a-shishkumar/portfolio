@@ -35,8 +35,8 @@ const stagger = {
 };
 
 const fadeIn = {
-  initial: { opacity: 0, y: 12 },
-  animate: { opacity: 1, y: 0 },
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0 },
   transition: { duration: 0.45 },
 };
 
@@ -54,7 +54,7 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       {/* HERO */}
 
-      <section className="relative pt-24  px-6 overflow-hidden">
+      <section className="relative pt-24 px-0 sm:px-6 overflow-hidden">
         <div className="absolute top-[-5%] right-[-5%] w-[40%] h-[40%] bg-primary/5 blur-[120px] -z-10 rounded-full" />
 
         <div className="container mx-auto max-w-6xl">
@@ -98,7 +98,7 @@ export default function HomePage() {
                   className="text-base text-muted-foreground max-w-lg leading-relaxed"
                 >
                   I'm{" "}
-                  <span className="font-semibold text-foreground">
+                  <span className="text-foreground">
                     Ashish Kumar
                   </span>
                   . A MERN Stack Developer focused on building scalable web
@@ -110,30 +110,30 @@ export default function HomePage() {
 
               <motion.div
                 variants={fadeIn}
-                className="pt-1 flex items-center gap-2 flex-wrap"
+                className="pt-1 flex flex-row items-center gap-2 sm:gap-4 w-full"
               >
                 <Button
-                  size="lg"
-                  className="h-11 px-6 rounded-lg font-semibold text-white shadow-none transition-all duration-300 active:scale-95"
+                  size="sm"
+                  className="group h-11 flex-1 sm:flex-none px-3 sm:px-6 rounded-lg font-semibold text-black bg-primary shadow-none transition-all duration-300 active:scale-95"
                   asChild
                 >
-                  <Link href="/projects" className="flex items-center gap-2">
+                  <Link href="/projects" className="flex items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-sm">
                     View My Work
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
 
                 <Button
                   variant="ghost"
-                  size="lg"
-                  className="flex items-center gap-2 px-5 h-11 rounded-lg border border-primary/30 bg-primary/10 hover:bg-primary/20 transition-all shadow-sm shadow-primary/5 font-semibold"
+                  size="sm"
+                  className="flex items-center justify-center flex-1 sm:flex-none gap-2 px-3 sm:px-5 h-11 rounded-lg border border-primary/30 bg-primary/10 hover:bg-primary/20 transition-all shadow-sm shadow-primary/5 font-semibold"
                   asChild
                 >
                   <Link
                     href="/contact"
-                    className="flex items-center gap-2 text-primary"
+                    className="flex items-center justify-center gap-1.5 sm:gap-2 text-primary text-[11px] sm:text-sm"
                   >
-                    <Mail className="w-4 h-4 text-primary" />
+                    <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
                     <span className="font-semibold">Get in Touch</span>
                   </Link>
                 </Button>
@@ -143,13 +143,13 @@ export default function HomePage() {
 
               <motion.div
                 variants={fadeIn}
-                className="flex flex-wrap items-center gap-6 pt-2"
+                className="flex flex-wrap items-center gap-4 pt-2"
               >
-                <div className="flex gap-5">
+                <div className="flex items-center gap-4">
                   <a
                     href={portfolioData.github}
                     target="_blank"
-                    className="p-2 rounded-lg text-muted-foreground hover:text-primary bg-primary/10 transition-all duration-300"
+                    className="p-2.5 rounded-lg text-muted-foreground hover:text-primary bg-primary/10 transition-all duration-300"
                     title="GitHub"
                   >
                     <Github className="w-5 h-5" />
@@ -158,7 +158,7 @@ export default function HomePage() {
                   <a
                     href={portfolioData.linkedin}
                     target="_blank"
-                    className="p-2 rounded-lg text-muted-foreground hover:text-primary bg-primary/10 transition-all duration-300"
+                    className="p-2.5 rounded-lg text-muted-foreground hover:text-primary bg-primary/10 transition-all duration-300"
                     title="LinkedIn"
                   >
                     <Linkedin className="w-5 h-5" />
@@ -166,26 +166,23 @@ export default function HomePage() {
 
                   <a
                     href={`mailto:${portfolioData.email}`}
-                    className="p-2 rounded-lg text-muted-foreground hover:text-primary bg-primary/10 transition-all duration-300"
+                    className="p-2.5 rounded-lg text-muted-foreground hover:text-primary bg-primary/10 transition-all duration-300"
                     title="Email"
                   >
                     <Mail className="w-5 h-5" />
                   </a>
                 </div>
 
-                <div className="h-4 w-px bg-border/60" />
+                <div className="hidden sm:block h-5 w-px bg-border/60 mx-1" />
 
                 <Button
                   variant="ghost"
-                  size="sm"
-                  className="flex items-center gap-2 text-sm font-semibold text-primary transition-colors h-auto p-0"
+                  className="flex items-center gap-2 px-4 h-11 rounded-lg border border-primary/30 bg-primary/10 hover:bg-primary/20 transition-all shadow-sm shadow-primary/5 font-semibold group"
                   asChild
                 >
-                  <a href="/resume.pdf" download>
-                    <div className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-primary/30 bg-primary/10  transition-all shadow-sm shadow-primary/5 font-semibold">
-                      <Download className="w-4 h-4 group-hover:translate-y-0.5 transition" />
-                      Download CV
-                    </div>
+                  <a href="https://drive.google.com/file/d/1p7w7X78VVektBDVCsHzf8oAsLHM_Syfv/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary">
+                    <Download className="w-4 h-4 group-hover:translate-y-0.5 transition" />
+                    <span className="text-sm">Download CV</span>
                   </a>
                 </Button>
               </motion.div>
@@ -194,20 +191,21 @@ export default function HomePage() {
             {/* RIGHT */}
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="lg:col-span-5 hidden lg:block"
             >
-              <div className="relative aspect-square max-w-[320px] ml-auto">
-                <div className="rounded-3xl border border-border bg-card shadow-lg flex items-center justify-center h-full">
-                  <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 4, repeat: Infinity }}
-                    className="w-24 h-24 rounded-3xl bg-primary text-white flex items-center justify-center text-3xl font-black shadow-lg"
-                  >
-                    AK
-                  </motion.div>
+              <div className="relative aspect-square max-w-[320px] ml-auto group cursor-default">
+                <div className="relative z-10 rounded-3xl border-2 border-border bg-card shadow-xl flex items-center justify-center h-full p-2 group-hover:border-primary/50 transition-colors duration-500">
+                  <div className="w-full h-full relative rounded-2xl overflow-hidden shadow-inner">
+                    <img
+                      src="/profileImg.svg"
+                      alt="Ashish Kumar"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-primary/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -218,8 +216,8 @@ export default function HomePage() {
       {/* PROJECTS */}
 
       <section className="pt-10 bg-muted/5 border-y border-border/40">
-        <div className="container mx-auto max-w-6xl px-6">
-          <div className="flex justify-between items-end mb-4">
+        <div className="container mx-auto max-w-6xl px-0 sm:px-6">
+          <div className="flex justify-between items-end mb-4 px-6 sm:px-6 md:px-0">
             <div>
               <Badge
                 variant="outline"
@@ -248,7 +246,7 @@ export default function HomePage() {
           </div>
 
           <Tabs defaultValue="featured" onValueChange={setActiveTab}>
-            <TabsList className="mb-3">
+            <TabsList className="mb-3 px-6 sm:px-6 md:px-0">
               <TabsTrigger value="featured">Projects</TabsTrigger>
 
               <TabsTrigger value="experiments">Labs</TabsTrigger>
@@ -258,8 +256,8 @@ export default function HomePage() {
               <AnimatePresence>
                 {isDataLoading && (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0 }}
                     className="absolute inset-0 flex items-center justify-center"
                   >
@@ -273,8 +271,8 @@ export default function HomePage() {
                   {portfolioData.projects.slice(0, 3).map((project, i) => (
                     <motion.div
                       key={project.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, x: 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.1 }}
                       viewport={{ once: true }}
                     >
@@ -380,7 +378,7 @@ export default function HomePage() {
 
       {/* CORE STACK */}
 
-      <section className="pt-20 pb-10 px-6 bg-muted/2">
+      <section className="pt-20 pb-10 px-0 sm:px-6 bg-muted/2">
         <div className="container mx-auto max-w-7xl">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-12">
             <div>
@@ -433,8 +431,8 @@ export default function HomePage() {
             ].map((cat, idx) => (
               <motion.div
                 key={cat.title}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.05 }}
                 viewport={{ once: true }}
               >
@@ -481,7 +479,7 @@ export default function HomePage() {
       </section>
       {/* CTA */}
 
-      <section className="py-5 px-6">
+      <section className="py-5 px-0 sm:px-6">
         <div className="container mx-auto max-w-4xl">
           <div className="relative overflow-hidden rounded-lg border border-primary/20 bg-primary/5 px-4 py-5 md:py-10 text-center">
             {/* Elaborate Theme Accents */}
@@ -507,31 +505,33 @@ export default function HomePage() {
                   <span className="text-primary italic">next project?</span>
                 </h2>
 
-                <p className="text-muted-foreground pt-2 text-md md:text-lg max-w-xl mx-auto font-medium leading-relaxed">
+                <p className="text-muted-foreground pt-2 text-md md:text-md max-w-xl mx-auto font-medium leading-relaxed">
                   I'm currently open to collaborations and new opportunities.
                   Let's code something extraordinary together.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
+              <div className="flex flex-row justify-center items-center gap-2 sm:gap-4 pt-2 w-full">
                 <Button
-                  size="lg"
-                  className="h-10 px-5 rounded-lg font-bold text-base shadow-lg shadow-primary/20 hover:shadow-primary/30  hover:scale-105 bg-primary text-primary-foreground"
+                  size="sm"
+                  className="group h-11 flex-1 sm:flex-none px-3 sm:px-6 rounded-lg font-semibold text-black bg-primary shadow-none transition-all duration-300 active:scale-95"
                   asChild
                 >
-                  <Link href="/contact" className="flex items-center gap-2">
+                  <Link href="/contact" className="flex items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-sm">
                     Start Project
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
 
                 <Button
-                  variant="outline"
-                  size="lg"
-                  className="h-10 px-5 rounded-lg font-bold text-base border-primary/20 bg-primary/5 text-primary transition-all"
+                  variant="ghost"
+                  size="sm"
+                  className="flex items-center justify-center flex-1 sm:flex-none gap-2 px-3 sm:px-5 h-11 rounded-lg border border-primary/30 bg-primary/10 hover:bg-primary/20 transition-all shadow-sm shadow-primary/5 font-semibold"
                   asChild
                 >
-                  <Link href="/about">My Experience</Link>
+                  <Link href="/about" className="flex items-center gap-2 text-primary text-[11px] sm:text-sm">
+                    <span className="font-semibold">My Experience</span>
+                  </Link>
                 </Button>
               </div>
             </div>
