@@ -288,18 +288,18 @@ export default function ExperiencePage() {
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
-        className="mt-16 flex flex-wrap gap-4"
+        className="mt-16 flex flex-row flex-wrap w-full gap-2 sm:gap-4"
       >
 
-        <Button className="rounded-md" size="default" asChild>
-          <Link href="/projects">
+        <Button className="rounded-md flex-1 sm:flex-none" size="default" asChild>
+          <Link href="/projects" className="flex items-center justify-center gap-2">
             View My Projects
-            <ArrowRight className="ml-2 w-4 h-4" />
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </Button>
 
-        <Button variant="outline" className="rounded-md text-primary hover:text-primary border-primary hover:border-primary hover:bg-primary/10" size="default" asChild>
-          <Link href="/contact">
+        <Button variant="outline" className="rounded-md flex-1 sm:flex-none text-primary hover:text-primary border-primary hover:border-primary hover:bg-primary/10" size="default" asChild>
+          <Link href="/contact" className="flex items-center justify-center gap-2">
             Contact Me
           </Link>
         </Button>

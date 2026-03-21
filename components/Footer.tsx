@@ -88,18 +88,24 @@ export default function Footer() {
               Sitemap
             </h4>
             <ul className="space-y-4">
-              {["Home", "Projects", "Skills", "About", "Contact"].map(
-                (item) => (
-                  <li key={item}>
+              {[
+                { href: "/", label: "Home" },
+                { href: "/about", label: "About" },
+                { href: "/skills", label: "Skills" },
+                { href: "/projects", label: "Projects" },
+                { href: "/experience", label: "Experience" },
+                { href: "/contact", label: "Contact" },
+              ].map((link) => (
+                  <li key={link.label}>
                     <Link
-                      href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                      href={link.href}
                       className="relative inline-block text-sm font-bold text-primary transition-colors duration-300 group"
                     >
-                      {item}
+                      {link.label}
                       <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
                     </Link>
                   </li>
-                ),
+                )
               )}
             </ul>
           </div>

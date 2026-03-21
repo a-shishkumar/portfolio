@@ -95,7 +95,7 @@ export default function HomePage() {
 
                 <motion.p
                   variants={fadeIn}
-                  className="text-base text-muted-foreground max-w-lg leading-relaxed"
+                  className="text-base text-[1rem] text-muted-foreground max-w-lg leading-relaxed"
                 >
                   I'm{" "}
                   <span className="text-foreground">
@@ -506,7 +506,7 @@ export default function HomePage() {
                   <span className="text-primary italic">next project?</span>
                 </h2>
 
-                <p className="text-muted-foreground pt-2 text-md md:text-md max-w-xl mx-auto font-medium leading-relaxed">
+                <p className="text-muted-foreground pt-2 text-sm md:text-md max-w-xl mx-auto font-medium leading-relaxed">
                   I'm currently open to collaborations and new opportunities.
                   Let's code something extraordinary together.
                 </p>
